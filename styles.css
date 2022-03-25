@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--very-dark-blue);
+    font-family: Overpass, sans-serif;
+    font-size: 15px;
+}
+
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+h2 {
+    color: var(--white);
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+p {
+    color: var(--medium-grey);
+}
+
+/* General CSS */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    position: absolute;
+    max-width: 400px;
+    background: radial-gradient(circle at top, var(--dark-blue) -50%, var(--very-dark-blue) 115%);
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.circle-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark-blue);
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+}
+/* Rating state */
+.star-img {
+    display: block;
+}
+.rating-state-container p {
+    margin-bottom: 25px;
+}
+.rating-state-container h2 {
+    margin-top: 25px;
+}
+
+.rating-selector {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.rating-selector label span {
+    color: var(--medium-grey);
+    cursor: pointer;
+    transition: background-color 200ms linear;
+}
+.rating-selector label span:hover {
+    background-color: var(--medium-grey);
+    color: var(--white);
+}
+.rating-selector label span:active {
+    background-color: var(--orange);
+}
+.rating-selector label input {
+    display: none;
+}
+.rating-selector label input:checked ~ span {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.rating-state-container button {
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: var(--orange);
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 700;
+}
+.rating-state-container button:hover {
+    background-color: var(--white);
+    color: var(--orange);
+    font-family: Overpass, sans-serif;
+}
+.rating-state-container button:active {
+    background-color: var(--orange);
+    color: var(--white);
+}
+/* Thank you state */
+
+.thank-you-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.thank-you-container.selected-amount {
+    background-color: var(--dark-blue);
+    color: var(--orange);
+    padding: 5px 15px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 25px 0;
+}
+
+@media screen and (max-width: 468px) {
+
+    .container {
+        margin: 0 25px;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    .circle-border {
+        height: 3em;
+        width: 3em;
+    }
+}
